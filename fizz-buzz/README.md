@@ -8,7 +8,7 @@ So now your maths teacher is pointing at all of your classmates in turn, and the
 So of course in order to avoid embarrassment in front of your whole class, you have to get the full list printed out so you know what to say. Your class has about 33 pupils and he might go round three times before the bell rings for break time. Next maths lesson is on Thursday. Get coding!
 
 # Goal
-Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz?".
+Write a program that prints the numbers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
 
 #Sample output
 
@@ -26,7 +26,7 @@ Write a program that prints the numbers from 1 to 100. But for multiples of thre
 	Fizz
 	13
 	14
-	RomanNumerals
+	FizzBuzz
 	16
 	17
 	Fizz
@@ -41,6 +41,6 @@ Write a program that prints the numbers from 1 to 100. But for multiples of thre
 
 # New requirements
 
- - A number is fizz if it is divisible by 3 or if it has a 3 in it
- - A number is buzz if it is divisible by 5 or if it has a 5 in it
- - The previous requirements are still correct.
+ - A number is Fizz if it is divisible by 3 or if it has a 3 in it
+ - A number is Buzz if it is divisible by 5 or if it has a 5 in it
+ - A number is FizzBuzz if it is divisible by 3 or if it has a 3 in it and if it is divisible by 5 or if it has a 5 in it
