@@ -10,5 +10,7 @@ Good kata to start doing TDD
 Refactoring kata
 ## Password validator
 Easy kata to practice the importance of the test order.
+## Print date
+Kata to start practicing with mocks and stubs.
 ## Bank
 Good kata to learn Outside-in TDD with mocks
