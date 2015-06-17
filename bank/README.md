@@ -37,4 +37,6 @@ Start writing the acceptance test but then move to unit tests, and at the end fo
 ## Documentation
 [Mockito](http://mockito.org)
 
+[Download Mockito](https://code.google.com/p/mockito/downloads/list)
+
 [How to use Mockito](http://site.mockito.org/#now-you-can-verify-interactions)
