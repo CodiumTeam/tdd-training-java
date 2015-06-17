@@ -8,3 +8,7 @@
 Good kata to start doing TDD
 ## Gilded Rose
 Refactoring kata
+## Password validator
+Easy kata to practice the importance of the test order.
+## Bank
+Good kata to learn Outside-in TDD with mocks
