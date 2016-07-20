@@ -35,7 +35,7 @@ Write a program that prints the numbers from 1 to 100. But for multiples of thre
 	... etc up to 100
 
 ---
-# Stop reading until you are developed this part
+# Stop reading until you have developed this part
 ---
 
 
