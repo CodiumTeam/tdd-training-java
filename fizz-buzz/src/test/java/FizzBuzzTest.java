@@ -5,14 +5,9 @@ import org.junit.Test;
 
 public class FizzBuzzTest {
 
-	@Before
-	public void setUp() throws Exception {
-	}
-
 	@Test
 	public void renameMe() {
-		FizzBuzz fizzBuzz = new FizzBuzz();
-		assertTrue(fizzBuzz.renameMe());
+		assertTrue(true);
 	}
 
 }
