@@ -1,5 +1,5 @@
 # Project
-In this Coffe Machine Project, your task is to implement the logic (starting from a simple class) that translates orders from customers of the coffee machine to the drink maker. Your code will use the drink maker protocol to send commands to the drink maker.
+In this Coffee Machine Project, your task is to implement the logic (starting from a simple class) that translates orders from customers of the coffee machine to the drink maker. Your code will use the drink maker protocol to send commands to the drink maker.
 
 # First iteration - Making drinks
 
@@ -18,6 +18,7 @@ The drink maker receives string commands from your code to make the drinks. It c
     "H::" (Drink maker makes 1 chocolate with no sugar and therefore no stick)
     "C:2:0" (Drink maker makes 1 coffee with 2 sugars and a stick)
     "M:message-content" (Drink maker forwards any message received onto the coffee machine interface for the customer to see)
+
 # Second iteration - Going into business
 The coffee machine is not free anymore! One tea is 0,4 euro, a coffee is 0,6 euro, a chocolate is 0,5 euro.
 
