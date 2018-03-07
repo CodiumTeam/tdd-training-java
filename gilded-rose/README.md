@@ -14,7 +14,7 @@ Unfortunately, our goods are constantly degrading in quality as they approach th
 
 	- All items have a SellIn value which denotes the number of days we have to sell the item
 	- All items have a Quality value which denotes how valuable the item is
-	- At the end of each day our system lowers both values for every item
+	- At the end of each day our system lowers both values by one for every item
 
 Pretty simple, right? Well this is where it gets interesting:
 
@@ -42,5 +42,3 @@ Important files
 - Tests file: GildedRoseTest
 - Code: GildedRose (and Item)
 - Sample of execution: TexttestFixtures
-
-[Sample of test solution](https://raw.githubusercontent.com/luisrovirosa/GildedRose-Refactoring-Kata/java-resolution/Java/com/gildedrose/GildedRoseTest.java)
