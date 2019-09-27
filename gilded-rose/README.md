@@ -1,10 +1,12 @@
 Kata Objective
 ======================================
+
 Add the new requirement, the item "Conjured" in a difficult to maintain code.
 
 Before to change the legacy code we need to create test to ensure we don't introduce any bug into production.
 
 Luckily we know how to use it and the requirements.
+
 
 Gilded Rose Requirements Specification
 ======================================
@@ -35,7 +37,20 @@ We have recently signed a supplier of conjured items. This requires an update to
 
 Feel free to make any changes to the UpdateQuality method and add any new code as long as everything still works correctly. However, do not alter the Item class or Items property as those belong to the goblin in the corner who will insta-rage and one-shot you as he doesn't believe in shared code ownership (you can make the UpdateQuality method and Items property static if you like, we'll cover for you).
 
+
 Important files
-==
+======================================
+
 - Tests file: GildedRoseTest
 - Code: GildedRose (and Item)
+
+
+Mutation testing
+======================================
+
+How to run mutation testing:
+
+    mvn org.pitest:pitest-maven:mutationCoverage
+    
+
+Reports are generated under the folder: target/pit-reports
