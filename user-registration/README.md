@@ -20,6 +20,32 @@ Part 2
 - Write the minimum amount of code to make it pass.
 - Do not forget to refactor the code.
 
+### Example of mock
+
+	@Test
+	public void should_interact_with_the_mock() {
+		Collaborator collaborator = mock(Collaborator.class);		
+		MyClass myClass = new MyClass(collaborator);
+		
+		myClass.run();
+		
+		verify(collaborator).collaborate();
+	}
+	
+### Example of stub
+
+	@Test
+	public void should_retrieve_the_stub_response(){
+		Collaborator collaborator = mock(Collaborator.class);		
+		String collaboratorResponse = "collaborator response";
+		when(collaborator.collaborate()).thenReturn(collaboratorResponse);
+		MyClass myClass = new MyClass(collaborator);
+		
+		String result = myClass.run();
+		
+		assertEquals(result, collaboratorResponse);
+	}
+
 ## Authors
 Luis Rovirosa [@luisrovirosa](https://www.twitter.com/luisrovirosa)
 
