@@ -6,10 +6,12 @@
 # Katas
 ## Fizz Buzz
 Good kata to start doing TDD
-## Gilded Rose
-Refactoring kata
+## Roman Numerals
+Good kata to keep practicing TDD
 ## Password validator
 Easy kata to practice the importance of the test order.
+## User registration
+Kata to practice tests doubles
 ## Print date
 Kata to start practicing with mocks and stubs.
 ## Coffee Machine
