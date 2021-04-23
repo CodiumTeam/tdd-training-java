@@ -1,5 +1,5 @@
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -12,7 +12,7 @@ import static org.mockito.Mockito.when;
 
 public class AcceptanceTest {
     @Test
-    @Ignore
+    @Disabled
     public void should_print_statement_containing_all_transactions() throws ParseException {
         Console console = mock(Console.class);
         Calendar calendar = mock(Calendar.class);
