@@ -1,11 +1,11 @@
 public class RomanNumerals {
     public String toRoman(int decimal) {
         if (decimal == 1) {
-            return "I" + toRoman(0);
+            return "I" + toRoman(decimal - 1);
         } else if (decimal == 2 ){
-            return "I" + toRoman(1);
+            return "I" + toRoman(decimal - 1);
         } else if (decimal == 3) {
-            return "I" + toRoman(2);
+            return "I" + toRoman(decimal - 1);
         } else if (decimal == 5) {
             return "V" + toRoman(0);
         } else if (decimal == 6) {
