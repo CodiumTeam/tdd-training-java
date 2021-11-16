@@ -8,6 +8,8 @@ public class RomanNumeralsTest {
 	@ParameterizedTest
 	@CsvSource({
 			"1,I",
+			"2,II",
+			"3,III",
 	})
 	public void translate_numbers(int decimal, String expectedRoman) {
 		RomanNumerals converter = new RomanNumerals();
