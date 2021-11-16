@@ -1,17 +1,19 @@
+import java.util.*;
+
 public class RomanNumerals {
     public String toRoman(int decimal) {
-        if (decimal <= 0) {
-            return "";
+        LinkedHashMap<Integer, String> conversionTable = new LinkedHashMap<>(){{
+            put(10, "X");
+            put(5, "V");
+            put(1, "I");
+        }};
+
+        for (Integer key: conversionTable.keySet()) {
+            if (decimal >= key) {
+                return conversionTable.get(key) + toRoman(decimal - key);
+            }
         }
-        if (decimal >= 10) {
-            return "X" + toRoman(decimal - 10);
-        }
-        if (decimal >= 5) {
-            return "V" + toRoman(decimal - 5);
-        }
-        if (decimal >= 1) {
-            return "I" + toRoman(decimal - 1);
-        }
-        return null;
+
+        return "";
     }
 }
