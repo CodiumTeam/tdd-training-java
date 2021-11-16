@@ -3,17 +3,17 @@ public class RomanNumerals {
         if (decimal == 1) {
             return "I";
         } else if (decimal == 2 ){
-            return "II";
+            return "I" + toRoman(1);
         } else if (decimal == 3) {
-            return "III";
+            return "I" + toRoman(2);
         } else if (decimal == 5) {
             return "V";
         } else if (decimal == 6) {
-            return "VI";
+            return "V" + toRoman(1);
         } else if (decimal == 7) {
-            return "VII";
+            return "V" + toRoman(2);
         } else if (decimal == 8) {
-            return "VIII";
+            return "V" + toRoman(3);
         }
         return null;
     }
