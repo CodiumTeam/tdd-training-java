@@ -14,6 +14,10 @@ public class RomanNumeralsTest {
 			"6,VI",
 			"7,VII",
 			"8,VIII",
+			"10,X",
+			"11,XI",
+			"12,XII",
+			"18,XVIII",
 	})
 	public void translate_numbers(int decimal, String expectedRoman) {
 		RomanNumerals converter = new RomanNumerals();
