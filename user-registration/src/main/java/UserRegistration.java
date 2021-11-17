@@ -10,7 +10,6 @@ public class UserRegistration {
     }
 
     public void execute(String email, String password) throws UserAlreadyExist, InvalidPasswordException {
-        emailSender.send(email);
         if (password.length() <= 9 || !password.contains("_")) {
             throw new InvalidPasswordException();
         }
@@ -19,5 +18,6 @@ public class UserRegistration {
         }
         String id = this.idGenerator.generate();
         this.userRepository.save(new User(id, email, password));
+        emailSender.send(email);
     }
 }

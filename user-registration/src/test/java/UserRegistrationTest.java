@@ -45,6 +45,7 @@ public class UserRegistrationTest {
         );
 
         verify(userRepository, times(0)).save(any());
+        verify(emailSender, times(0)).send(any());
     }
 
     @Test
@@ -54,6 +55,7 @@ public class UserRegistrationTest {
         );
 
         verify(userRepository, times(0)).save(any());
+        verify(emailSender, times(0)).send(any());
     }
 
     @Test
@@ -63,6 +65,7 @@ public class UserRegistrationTest {
         );
 
         verify(userRepository, times(0)).save(any());
+        verify(emailSender, times(0)).send(any());
     }
 
     private User anyUser() {
