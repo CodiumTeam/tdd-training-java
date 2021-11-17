@@ -1,14 +1,24 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
 
 public class UserRegistrationTest {
+
+    private IdGenerator idGenerator;
+    private UserRepository userRepository;
+    private UserRegistration userRegistration;
+
+    @BeforeEach
+    void setUp() {
+        idGenerator = mock(IdGenerator.class);
+        userRepository = mock(UserRepository.class);
+        userRegistration = new UserRegistration(userRepository, idGenerator);
+    }
+
     @Test
     public void persist_the_user(){
-        IdGenerator idGenerator = mock(IdGenerator.class);
         when(idGenerator.generate()).thenReturn("anId");
-        UserRepository userRepository = mock(UserRepository.class);
-        UserRegistration userRegistration = new UserRegistration(userRepository, idGenerator);
 
         userRegistration.execute("an@email.com", "valid_password");
 
