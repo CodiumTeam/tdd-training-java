@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,12 +18,22 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void persist_the_user(){
+    public void persist_the_user() throws UserAlreadyExist {
         when(idGenerator.generate()).thenReturn("anId");
 
         userRegistration.execute("an@email.com", "valid_password");
 
         verify(userRepository).save(new User("anId", "an@email.com", "valid_password"));
+    }
+
+    @Test
+    public void do_not_allow_register_users_with_existing_email() {
+        User existingUser = new User("anId", "an@email.com", "aPassword");
+        when(userRepository.findByEmail("an@email.com")).thenReturn(existingUser);
+
+        Assertions.assertThrows(UserAlreadyExist.class, () -> userRegistration.execute("an@email.com", "valid_password"));
+
+        verify(userRepository,times(0)).save(any());
     }
 
 }

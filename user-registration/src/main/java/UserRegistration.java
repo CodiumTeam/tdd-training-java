@@ -7,7 +7,10 @@ public class UserRegistration {
         this.idGenerator = idGenerator;
     }
 
-    public void execute(String email, String password) {
+    public void execute(String email, String password) throws UserAlreadyExist {
+        if (userRepository.findByEmail(email) != null) {
+            throw new UserAlreadyExist();
+        }
         String id = this.idGenerator.generate();
         this.userRepository.save(new User(id, email, password));
     }
