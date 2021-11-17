@@ -47,6 +47,15 @@ public class UserRegistrationTest {
         verify(userRepository, times(0)).save(any());
     }
 
+    @Test
+    public void do_not_allow_register_users_with_password_without_underscore() {
+        assertThrows(InvalidPasswordException.class,
+                () -> userRegistration.execute("an@email.com", "nounderscorepassword")
+        );
+
+        verify(userRepository, times(0)).save(any());
+    }
+
     private User anyUser() {
         return new User("anId", "an@email.com", "aPassword");
     }

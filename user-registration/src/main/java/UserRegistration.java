@@ -8,7 +8,7 @@ public class UserRegistration {
     }
 
     public void execute(String email, String password) throws UserAlreadyExist, InvalidPasswordException {
-        if (password.length() <= 9) {
+        if (password.length() <= 9 || !password.contains("_")) {
             throw new InvalidPasswordException();
         }
         if (userRepository.findByEmail(email) != null) {
