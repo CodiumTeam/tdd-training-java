@@ -7,7 +7,10 @@ public class UserRegistration {
         this.idGenerator = idGenerator;
     }
 
-    public void execute(String email, String password) throws UserAlreadyExist {
+    public void execute(String email, String password) throws UserAlreadyExist, InvalidPasswordException {
+        if (password.length() <= 9) {
+            throw new InvalidPasswordException();
+        }
         if (userRepository.findByEmail(email) != null) {
             throw new UserAlreadyExist();
         }
