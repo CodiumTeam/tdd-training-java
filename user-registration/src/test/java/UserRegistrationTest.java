@@ -28,12 +28,17 @@ public class UserRegistrationTest {
 
     @Test
     public void do_not_allow_register_users_with_existing_email() {
-        User existingUser = new User("anId", "an@email.com", "aPassword");
-        when(userRepository.findByEmail("an@email.com")).thenReturn(existingUser);
+        when(userRepository.findByEmail("an@email.com")).thenReturn(anyUser());
 
-        Assertions.assertThrows(UserAlreadyExist.class, () -> userRegistration.execute("an@email.com", "valid_password"));
+        Assertions.assertThrows(UserAlreadyExist.class,
+                () -> userRegistration.execute("an@email.com", "valid_password")
+        );
 
-        verify(userRepository,times(0)).save(any());
+        verify(userRepository, times(0)).save(any());
+    }
+
+    private User anyUser() {
+        return new User("anId", "an@email.com", "aPassword");
     }
 
 }
