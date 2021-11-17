@@ -1,13 +1,16 @@
 public class UserRegistration {
     private final UserRepository userRepository;
     private final IdGenerator idGenerator;
+    private EmailSender emailSender;
 
-    public UserRegistration(UserRepository userRepository, IdGenerator idGenerator) {
+    public UserRegistration(UserRepository userRepository, IdGenerator idGenerator, EmailSender emailSender) {
         this.userRepository = userRepository;
         this.idGenerator = idGenerator;
+        this.emailSender = emailSender;
     }
 
     public void execute(String email, String password) throws UserAlreadyExist, InvalidPasswordException {
+        emailSender.send(email);
         if (password.length() <= 9 || !password.contains("_")) {
             throw new InvalidPasswordException();
         }

@@ -10,12 +10,14 @@ public class UserRegistrationTest {
     private IdGenerator idGenerator;
     private UserRepository userRepository;
     private UserRegistration userRegistration;
+    private EmailSender emailSender;
 
     @BeforeEach
     void setUp() {
         idGenerator = mock(IdGenerator.class);
         userRepository = mock(UserRepository.class);
-        userRegistration = new UserRegistration(userRepository, idGenerator);
+        emailSender = mock(EmailSender.class);
+        userRegistration = new UserRegistration(userRepository, idGenerator, emailSender);
     }
 
     @Test
@@ -25,6 +27,13 @@ public class UserRegistrationTest {
         userRegistration.execute("an@email.com", "valid_password");
 
         verify(userRepository).save(new User("anId", "an@email.com", "valid_password"));
+    }
+
+    @Test
+    public void sends_a_confirmation_email() throws Throwable {
+        userRegistration.execute("an@email.com", "valid_password");
+
+        verify(emailSender).send("an@email.com");
     }
 
     @Test
