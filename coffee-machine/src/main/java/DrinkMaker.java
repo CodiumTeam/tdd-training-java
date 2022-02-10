@@ -1,5 +1,4 @@
-public class DrinkMaker {
-    public void execute(String command){
-        // send the command to the DrinkMaker
-    }
+public interface DrinkMaker {
+    // You don't need to implement anything related with the DrinkMaker
+    void execute(String command);
 }
