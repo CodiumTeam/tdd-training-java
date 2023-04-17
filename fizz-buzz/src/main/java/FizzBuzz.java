@@ -7,8 +7,10 @@ public class FizzBuzz {
         for (int i = 0; i < 100; i++) {
             if (i == 0) {
                 values.add("1");
-            } else {
+            } else if (i == 1) {
                 values.add("2");
+            } else {
+                values.add("4");
             }
         }
         return values;

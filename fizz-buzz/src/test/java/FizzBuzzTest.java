@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class FizzBuzzTest {
 
@@ -33,4 +32,12 @@ public class FizzBuzzTest {
 		assertEquals("2", values.get(1));
 	}
 
+	@Test
+	public void fourth_value_is_4() {
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> values = fizzBuzz.values();
+
+		assertEquals("4", values.get(3));
+	}
 }
