@@ -24,4 +24,13 @@ public class FizzBuzzTest {
 		assertEquals("1", values.get(0));
 	}
 
+	@Test
+	public void second_value_is_2() {
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> values = fizzBuzz.values();
+
+		assertEquals("2", values.get(1));
+	}
+
 }
