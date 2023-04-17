@@ -46,4 +46,14 @@ public class FizzBuzzTest {
 
 		assertEquals("Buzz", values.get(number-1));
 	}
+
+	@ParameterizedTest
+	@ValueSource(ints = {15, 30, 45})
+	public void multiple_of_three_and_five_are_fizzbuzz(int number) {
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> values = fizzBuzz.values();
+
+		assertEquals("FizzBuzz", values.get(number-1));
+	}
 }
