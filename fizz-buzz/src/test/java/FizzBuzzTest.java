@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.List;
 
@@ -14,30 +16,14 @@ public class FizzBuzzTest {
 
 		assertEquals(100, values.toArray().length);
 	}
-	@Test
-	public void first_value_is_1() {
+
+	@ParameterizedTest
+	@ValueSource(ints = {1, 2, 4})
+	public void numbers_that_are_not_multiple_returns_the_value_as_string(int number) {
 		FizzBuzz fizzBuzz = new FizzBuzz();
 
 		List<String> values = fizzBuzz.values();
 
-		assertEquals("1", values.get(0));
-	}
-
-	@Test
-	public void second_value_is_2() {
-		FizzBuzz fizzBuzz = new FizzBuzz();
-
-		List<String> values = fizzBuzz.values();
-
-		assertEquals("2", values.get(1));
-	}
-
-	@Test
-	public void fourth_value_is_4() {
-		FizzBuzz fizzBuzz = new FizzBuzz();
-
-		List<String> values = fizzBuzz.values();
-
-		assertEquals("4", values.get(3));
+		assertEquals(String.valueOf(number), values.get(number-1));
 	}
 }
