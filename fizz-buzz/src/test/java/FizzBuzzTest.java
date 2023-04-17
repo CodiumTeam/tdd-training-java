@@ -15,5 +15,13 @@ public class FizzBuzzTest {
 
 		assertEquals(100, values.toArray().length);
 	}
+	@Test
+	public void first_value_is_1() {
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> values = fizzBuzz.values();
+
+		assertEquals("1", values.get(0));
+	}
 
 }
