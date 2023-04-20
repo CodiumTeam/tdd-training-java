@@ -1,11 +1,12 @@
 public class CoffeeMachine {
-    private final DrinkMaker drinkMaker;
+    private final Maker maker;
 
-    public CoffeeMachine(DrinkMaker drinkMaker) {
-        this.drinkMaker = drinkMaker;
+    public CoffeeMachine(Maker maker) {
+        this.maker = maker;
     }
 
     public void prepareCoffee() {
-        drinkMaker.execute("C::");
+        maker.prepare(new Drink(DrinkType.Coffee, 0));
+
     }
 }
