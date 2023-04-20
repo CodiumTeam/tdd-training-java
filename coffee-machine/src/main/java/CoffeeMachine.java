@@ -20,6 +20,8 @@ public class CoffeeMachine {
     }
 
     public void addSugar() {
-        sugar++;
+        if (sugar < 2) {
+            sugar++;
+        }
     }
 }

@@ -60,9 +60,18 @@ public class CoffeeMachineTest {
         verify(maker).prepare(new Drink(DrinkType.Chocolate, 1));
     }
 
-
     @Test
     public void prepare_a_coffee_with_two_sugar() {
+        coffeeMachine.addSugar();
+        coffeeMachine.addSugar();
+        coffeeMachine.prepareCoffee();
+
+        verify(maker).prepare(new Drink(DrinkType.Coffee, 2));
+    }
+
+    @Test
+    public void does_not_add_more_than_two_sugars() {
+        coffeeMachine.addSugar();
         coffeeMachine.addSugar();
         coffeeMachine.addSugar();
         coffeeMachine.prepareCoffee();
