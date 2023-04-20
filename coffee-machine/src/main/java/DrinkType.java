@@ -1,3 +1,3 @@
 public enum DrinkType {
-    Coffee
+    Tea, Coffee
 }

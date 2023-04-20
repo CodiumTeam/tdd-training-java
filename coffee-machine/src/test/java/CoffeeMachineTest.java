@@ -26,5 +26,15 @@ public class CoffeeMachineTest {
         verify(maker).prepare(new Drink(DrinkType.Coffee, 0));
     }
 
+    @Test
+    public void prepare_a_tea_without_sugar_with_good_interface() {
+        Maker maker = mock(Maker.class);
+        CoffeeMachine coffeeMachine = new CoffeeMachine(maker);
+
+        coffeeMachine.prepareTea();
+
+        verify(maker).prepare(new Drink(DrinkType.Tea, 0));
+    }
+
 
 }
