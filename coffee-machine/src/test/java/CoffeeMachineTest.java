@@ -7,17 +7,6 @@ public class CoffeeMachineTest {
 
     @Test
     public void prepare_a_coffee_without_sugar() {
-        DrinkMaker drinkMaker = mock(DrinkMaker.class);
-        Maker maker = new Maker(drinkMaker);
-        CoffeeMachine coffeeMachine = new CoffeeMachine(maker);
-
-        coffeeMachine.prepareCoffee();
-
-        verify(drinkMaker).execute("C::");
-    }
-
-    @Test
-    public void prepare_a_coffee_without_sugar_with_good_interface() {
         Maker maker = mock(Maker.class);
         CoffeeMachine coffeeMachine = new CoffeeMachine(maker);
 
@@ -27,13 +16,23 @@ public class CoffeeMachineTest {
     }
 
     @Test
-    public void prepare_a_tea_without_sugar_with_good_interface() {
+    public void prepare_a_tea_without_sugar() {
         Maker maker = mock(Maker.class);
         CoffeeMachine coffeeMachine = new CoffeeMachine(maker);
 
         coffeeMachine.prepareTea();
 
         verify(maker).prepare(new Drink(DrinkType.Tea, 0));
+    }
+
+    @Test
+    public void prepare_a_chocolate_without_sugar() {
+        Maker maker = mock(Maker.class);
+        CoffeeMachine coffeeMachine = new CoffeeMachine(maker);
+
+        coffeeMachine.prepareChocolate();
+
+        verify(maker).prepare(new Drink(DrinkType.Chocolate, 0));
     }
 
 

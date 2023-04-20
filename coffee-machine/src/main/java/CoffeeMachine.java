@@ -12,4 +12,8 @@ public class CoffeeMachine {
     public void prepareTea() {
         maker.prepare(new Drink(DrinkType.Tea, 0));
     }
+
+    public void prepareChocolate() {
+        maker.prepare(new Drink(DrinkType.Chocolate, 0));
+    }
 }
