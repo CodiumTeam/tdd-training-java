@@ -61,4 +61,13 @@ public class CoffeeMachineTest {
     }
 
 
+    @Test
+    public void prepare_a_coffee_with_two_sugar() {
+        coffeeMachine.addSugar();
+        coffeeMachine.addSugar();
+        coffeeMachine.prepareCoffee();
+
+        verify(maker).prepare(new Drink(DrinkType.Coffee, 2));
+    }
+
 }
