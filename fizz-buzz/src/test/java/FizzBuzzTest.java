@@ -15,4 +15,13 @@ public class FizzBuzzTest {
 		assertEquals("1", numbers.get(0));
 	}
 
+	@Test
+	public void the_second_element_is_2() {
+		FizzBuzz fizzBuzz = new FizzBuzz();
+
+		List<String> numbers = fizzBuzz.execute();
+
+		assertEquals("2", numbers.get(1));
+	}
+
 }
