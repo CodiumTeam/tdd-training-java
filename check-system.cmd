@@ -28,7 +28,7 @@ goto :eof
     )
 
     echo Creating docker image...
-    docker build . -t codiumteam/tdd-training-java >NUL: 2>NUL:
+    docker pull codiumteam/tdd-training-java >NUL: 2>NUL:
     IF ERRORLEVEL 1 (
       echo Error
       echo Do you have internet connection?
